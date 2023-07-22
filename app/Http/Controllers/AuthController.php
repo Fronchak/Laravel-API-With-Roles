@@ -18,6 +18,7 @@ class AuthController extends Controller
         $encrypted = bcrypt($password);
         $user->password = $encrypted;
         $user->save();
+        $user->assignRole('worker');
         return $this->authenticate([
             'email' => $user->email,
             'password' => $request->get('password')

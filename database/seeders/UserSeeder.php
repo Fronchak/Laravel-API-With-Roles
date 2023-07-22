@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'name' => 'Manager',
             'email' => 'manager@gmail.com',
             'password' => bcrypt('manager')
-        ])->assignRole('admin');
+        ])->assignRole('manager');
         User::create([
             'name' => 'worker',
             'email' => 'worker@gmail.com',

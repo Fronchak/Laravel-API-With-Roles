@@ -13,6 +13,9 @@ class DepartmentController extends Controller
 
     public function __construct(Department $department) {
         $this->middleware('auth:api');
+        $this->middleware('role:worker|manager|admin')->only(['index', 'show']);
+        $this->middleware('role:manager|admin')->only(['store', 'update']);
+        $this->middleware('role:admin')->only('destroy');
         $this->department = $department;
     }
     /**
