@@ -15,7 +15,7 @@ class Department extends Model
 
     public function rules() {
         return [
-            'name' => 'required|min:3'
+            'name' => 'required|min:3|max:60|unique:departments,name'
         ];
     }
 
